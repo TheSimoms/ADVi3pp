@@ -49,7 +49,7 @@ echo "***** Generate other microSD images..."
 echo
 echo "***** Compile Mainboard firmwares..."
 echo
-platformio -f -c clion run -d "${advi3pp}" -e advi3pp-51 -e advi3pp-51-bltouch -e advi3pp-52c -e advi3pp-52c-bltouch -e advi3pp-54
+platformio -f -c clion run -d "${advi3pp}" -e advi3pp-51 -e advi3pp-51-bltouch -e advi3pp-52c -e advi3pp-52c-bltouch -e advi3pp-54 -e advi3pp-54-bltouch
 ret=$?; if [[ $ret != 0 ]]; then exit $ret; fi
 
 echo
@@ -60,6 +60,7 @@ cp "${advi3pp}/.pioenvs/advi3pp-51-bltouch/firmware.hex" "${release}/ADVi3pp-Mai
 cp "${advi3pp}/.pioenvs/advi3pp-52c/firmware.hex" "${release}/ADVi3pp-Mainboard-52c-${version}.hex"
 cp "${advi3pp}/.pioenvs/advi3pp-52c-bltouch/firmware.hex" "${release}/ADVi3pp-Mainboard-52c-BLTouch-${version}.hex"
 cp "${advi3pp}/.pioenvs/advi3pp-54/firmware.hex" "${release}/ADVi3pp-Mainboard-54-${version}.hex"
+cp "${advi3pp}/.pioenvs/advi3pp-54-bltouch/firmware.hex" "${release}/ADVi3pp-Mainboard-54-BLTouch-${version}.hex"
 ret=$?; if [[ $ret != 0 ]]; then exit $ret; fi
 
 echo

@@ -54,8 +54,14 @@
     #define SERVO0_PIN          40   // PG1 / !RD
 #endif
 #elif MB(ADVI3PP_I3_PLUS_54)
-#define Z_STOP_PIN              6   // PH3 / PCINT8
-#define Z_MIN_PROBE_PIN         6   // PH3 / PCINT8
+#if ENABLED(BLTOUCH)
+    #define Z_STOP_PIN          56   // EXT connector Pin #7
+    #define Z_MIN_PROBE_PIN     56   // EXT connector Pin #7
+    #define SERVO0_PIN          40   // EXT connector Pin #1
+#else
+    #define Z_STOP_PIN          6   // PH3 / PCINT8
+    #define Z_MIN_PROBE_PIN     6   // PH3 / PCINT8
+#endif
 #else
 #error "Unknown i3 Plus mainboard"
 #endif

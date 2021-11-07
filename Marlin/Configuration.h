@@ -923,7 +923,9 @@
  */
 // @advi3++: Mark II probe is fix
 #ifdef ADVi3PP_54
+#ifndef BLTOUCH
 #define FIX_MOUNTED_PROBE
+#endif
 #endif
 
 /**
